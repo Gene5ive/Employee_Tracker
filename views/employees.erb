@@ -1,0 +1,10 @@
+<h3>Here are all the employees:</h3>
+
+<ul>
+  <% @employees.each() do |employee| %>
+    <li><%= employee.name() %> <%= employee.division_id() %><a href='/employees/<%= employee.id() %>'>
+      <p>Update this employee</p></a></li>
+  <% end %>
+</ul>
+
+<a href='/employees/add'>Add a new employee</a>

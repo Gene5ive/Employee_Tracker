@@ -10,5 +10,8 @@ RSpec.configure do |config|
     Division.all().each() do |division|
       division.destroy()
     end
+    Employee.all().each() do |employee|
+      employee.destroy()
+    end
   end
 end
