@@ -1,11 +1,22 @@
 <h3>Here are all the employees:</h3>
 
-<ul>
-  <% @employees.each() do |employee| %>
-    <li><%= employee.name() %> in <%= employee.division.name() %><a href='/employees/<%= employee.id() %>'>
-      <p>Update this employee</p></a></li>
-  <% end %>
-</ul>
+<% if @employees.any?() %>
+
+  <ul>
+    <% @employees.each() do |employee| %>
+      <li><%= employee.name() %>
+        <a href='/employees/<%= employee.id() %>'>
+          <p>Update this employee</p>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+
+<% else %>
+
+  <p>There are no employees.</p>
+
+<% end %>
 
 <a href='/employees/add'>Add a new employee</a>
 <br>

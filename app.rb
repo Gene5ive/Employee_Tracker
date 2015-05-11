@@ -20,6 +20,13 @@ get('/divisions') do
 end
 #-------------
 
+#all division employees
+get('/divisions/:id/employees') do
+  @division = Division.find(params.fetch('id').to_i)
+  erb(:division_employees)
+end
+#---------------------
+
 #add division
 get('/divisions/add') do
   erb(:divisions_form)

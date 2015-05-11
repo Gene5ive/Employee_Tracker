@@ -1,0 +1,7 @@
+<h1>Here are all the employees for this division:</h1>
+
+<ul>
+<% @division.employees.each() do |employee| %>
+  <li><%= employee.name %></li>
+<% end %>
+</ul>

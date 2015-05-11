@@ -2,9 +2,17 @@
 
 <ul>
   <% @divisions.each() do |division| %>
-    <li><%= division.name() %><a href='/divisions/<%= division.id() %>'>
-      <p>Update this division</p></a></li>
+    <li><%= division.name() %>
+      <a href='/divisions/<%= division.id() %>'>
+        <p>Update this division</p>
+      </a>
+      <a href='/divisions/<%= division.id() %>/employees'>
+        <p>See all employees for this division</p>
+      </a>
+    </li>
   <% end %>
 </ul>
 
 <a href='/divisions/add'>Add a division</a>
+<br>
+<a href='/'>Return to Index</a>
