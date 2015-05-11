@@ -2,7 +2,7 @@
 
 <ul>
   <% @divisions.each() do |division| %>
-    <li><%= division.name() %><a href='/divisions/<%= division.id() %>/edit' id='division.id()'>
+    <li><%= division.name() %><a href='/divisions/<%= division.id() %>'>
       <p>Update this division</p></a></li>
   <% end %>
 </ul>

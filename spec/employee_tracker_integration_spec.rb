@@ -36,3 +36,14 @@ describe('the path to update a division', {:type => :feature}) do
     expect(page).to have_content('IT')
   end
 end
+
+describe('the path to delete a division', {:type => :feature}) do
+  it('will show a form to delete a division') do
+    division = Division.create({:name => 'Sales'})
+    visit('/')
+    click_on('See divisions')
+    click_on('Update this division')
+    click_button('Delete')
+    expect(page).to have_no_content('Sales')
+  end
+end

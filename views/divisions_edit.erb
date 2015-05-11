@@ -6,3 +6,10 @@
   <input id="name" name="name" type="text">
   <button type="submit">Rename:</button>
 </form>
+
+<form action='/divisions/<%= @division.id %>' method='post'>
+  <div class='form-group'>
+    <input name="_method" type="hidden" value="delete">
+    <button id='delete_division' class='btn-danger'>Delete</button>
+  </div>
+</form>
