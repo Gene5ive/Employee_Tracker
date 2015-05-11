@@ -22,7 +22,7 @@ end
 
 get('/divisions/:id/edit') do
   @division = Division.find(params.fetch('id').to_i)
-  erb(:division_edit)
+  erb(:divisions_edit)
 end
 
 post('/divisions') do
@@ -33,6 +33,9 @@ post('/divisions') do
 end
 
 patch('/divisions/:id') do
-  #
+  name = params.fetch('name')
+  @division = Division.find(params.fetch('id').to_i)
+  @division.update({:name => name})
+  @divisions = Division.all
   erb(:divisions)
 end

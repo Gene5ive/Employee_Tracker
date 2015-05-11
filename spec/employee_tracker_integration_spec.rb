@@ -24,3 +24,15 @@ describe('the path to add a new division', {:type => :feature}) do
     expect(page).to have_content('IT')
   end
 end
+
+describe('the path to update a division', {:type => :feature}) do
+  it('will show a form to update a new division') do
+    division = Division.create({:name => 'Sales'})
+    visit('/')
+    click_on('See divisions')
+    click_on('Update this division')
+    fill_in('name', :with => 'IT')
+    click_button('Rename')
+    expect(page).to have_content('IT')
+  end
+end
