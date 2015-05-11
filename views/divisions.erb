@@ -1,0 +1,10 @@
+<h3>Here are the divisions:</h3>
+
+<ul>
+  <% @divisions.each() do |division| %>
+    <li><%= division.name() %><a href='/divisions/<%= division.id() %>/edit'>
+      <p>Update this division</p></a></li>
+  <% end %>
+</ul>
+
+<a href='/divisions/add'>Add a division</a>
