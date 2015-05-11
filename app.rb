@@ -96,3 +96,12 @@ patch('/employees/:id') do
   erb(:employees)
 end
 #---------------
+
+#delete employee
+delete('/employees/:id') do
+  @employee = Employee.find(params.fetch('id').to_i)
+  @employee.delete
+  @employees = Employee.all
+  erb(:employees)
+end
+#--------------

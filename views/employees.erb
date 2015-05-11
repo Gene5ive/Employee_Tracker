@@ -2,9 +2,11 @@
 
 <ul>
   <% @employees.each() do |employee| %>
-    <li><%= employee.name() %> <%= employee.division_id() %><a href='/employees/<%= employee.id() %>'>
+    <li><%= employee.name() %> in <%= employee.division.name() %><a href='/employees/<%= employee.id() %>'>
       <p>Update this employee</p></a></li>
   <% end %>
 </ul>
 
 <a href='/employees/add'>Add a new employee</a>
+<br>
+<a href='/'>Return to Index</a>
